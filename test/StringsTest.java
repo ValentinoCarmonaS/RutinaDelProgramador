@@ -27,5 +27,9 @@ public class StringsTest {
         assertEquals(-1, idx.strStr("leetcode", "leeto"));
         assertEquals(3, idx.strStr("salsadbutsad", "sad"));
         assertEquals(-1, idx.strStr("leetcode", "leetcodelock"));
+        assertEquals(0, idx.strStr("aaa", "aa"));
+        assertEquals(-1, idx.strStr("alamotre", "tree"));
+        assertEquals(1, idx.strStr("aab", "ab"));
+        assertEquals(4, idx.strStr("mississippi", "issip"));
     }
 }

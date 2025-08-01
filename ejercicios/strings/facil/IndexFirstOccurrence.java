@@ -20,19 +20,13 @@ public class IndexFirstOccurrence {
             haystack and needle consist of only lowercase English characters.
      */
     public int strStr(String haystack, String needle) {
-        int lenNeedle = needle.length();
-        int lenHayStack = haystack.length();
-        if (lenNeedle > lenHayStack) return -1;
+        if (haystack.length() < needle.length()) {
+            return -1;
+        }
 
-        int start = 0;
-        int end = 0;
-        for (int i = 0; i < lenHayStack; i++) {
-            if (haystack.charAt(i) == needle.charAt(0)) start = i;
-            else if (haystack.charAt(i) == needle.charAt(lenNeedle-1)) {
-                end = i;
-                if (end > start && lenNeedle == (end - start + 1)) {
-                    return start;
-                }
+        for (int i = 0; i <= haystack.length() - needle.length(); i++) {
+            if (haystack.substring(i, i + needle.length()).equals(needle)) {
+                return i;
             }
         }
 
