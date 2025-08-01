@@ -1,5 +1,6 @@
-# RutinaDelProgramador
-## Rutina "Backend Dev Strong"
+![Build Status](https://github.com/ValentinoCarmonaS/RutinaDelProgramador/actions/workflows/ci.yml/badge.svg)
+
+# Rutina del Programador
 
 **Frecuencia**: 5 días a la semana (Lunes a Viernes), con fines de semana para repasar o descansar.
 **Duración por sesión**: 1.5 - 2.5 horas (adaptable a tu tiempo).
