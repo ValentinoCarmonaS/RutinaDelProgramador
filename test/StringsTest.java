@@ -32,4 +32,12 @@ public class StringsTest {
         assertEquals(1, idx.strStr("aab", "ab"));
         assertEquals(4, idx.strStr("mississippi", "issip"));
     }
+
+    @Test
+    public void testAddBinary() {
+        AddBinary ab = new AddBinary();
+
+        assertEquals("100", ab.addBinary("11", "1"));
+        assertEquals("10101", ab.addBinary("1010", "1011"));
+    }
 }
