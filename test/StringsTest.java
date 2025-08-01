@@ -18,4 +18,14 @@ public class StringsTest {
         assertEquals(true, vp.isValid("([])"));
         assertEquals(false, vp.isValid("([)]"));
     }
+
+    @Test
+    public void testIndexFirstOccurrence() {
+        IndexFirstOccurrence idx = new IndexFirstOccurrence();
+        
+        assertEquals(0, idx.strStr("sadbutsad", "sad"));
+        assertEquals(-1, idx.strStr("leetcode", "leeto"));
+        assertEquals(3, idx.strStr("salsadbutsad", "sad"));
+        assertEquals(-1, idx.strStr("leetcode", "leetcodelock"));
+    }
 }
