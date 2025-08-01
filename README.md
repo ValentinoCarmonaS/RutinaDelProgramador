@@ -1,5 +1,4 @@
-![Build Status](https://github.com/ValentinoCarmonaS/RutinaDelProgramador/workflows/ci.yml/badge.svg)
-![License](https://img.shields.io/badge/License-MIT-blue)
+![Tests](https://github.com/ValentinoCarmonaS/RutinaDelProgramador/actions/workflows/tests.yml/badge.svg)
 
 # Rutina del Programador
 
