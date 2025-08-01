@@ -1,0 +1,29 @@
+name: Tests
+
+# Cuándo ejecutar: cuando haces push o pull request
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+# El trabajo que va a hacer
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    # 1. Descargar mi código
+    - uses: actions/checkout@v4
+    
+    # 2. Instalar Java
+    - uses: actions/setup-java@v4
+      with:
+        java-version: 17
+        distribution: 'temurin'
+    
+    # 3. Ejecutar mis tests
+    - name: Ejecutar tests
+      run: |
+        chmod +x .github/scripts/run_tests.sh
+        ./.github/scripts/run_tests.sh
