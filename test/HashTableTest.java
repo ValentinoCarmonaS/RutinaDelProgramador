@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import hash_table.facil.RomanToInt;
+import hash_table.facil.*;
 
 public class HashTableTest {
     @Test
