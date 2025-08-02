@@ -29,4 +29,23 @@ public class ArrayTest {
         assertArrayEquals(new int[] {1,2}, test2);
         assertArrayEquals(new int[] {0,1}, test3);
     }
+
+    @Test
+    public void testMergeSortedArray() {
+        MergeSortedArray msa = new MergeSortedArray();
+        int[] array1 = new int[] {1,2,3,0,0,0};
+        int[] array2 = new int[] {2,5,6};
+        int[] array3 = new int[] {1};
+        int[] array4 = new int[] {};
+        int[] array5 = new int[] {0};
+        int[] array6 = new int[] {1};
+
+        msa.merge(array1, 3, array2, 3);
+        msa.merge(array3, 0, array4, 0);
+        msa.merge(array5, 0, array6, 1);
+
+        assertArrayEquals(new int[] {1,2,2,3,5,6}, array1);
+        assertArrayEquals(new int[] {1}, array3);
+        assertArrayEquals(new int[] {1}, array5);
+    }
 }
