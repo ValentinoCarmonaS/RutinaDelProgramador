@@ -34,6 +34,15 @@ public class StringsTest {
     }
 
     @Test
+    public void testLengthOfLastWord() {
+        LengthOfLastWord llw = new LengthOfLastWord();
+
+        assertEquals(5, llw.lengthOfLastWord("Hello World"));
+        assertEquals(4, llw.lengthOfLastWord("   fly me   to   the moon  "));
+        assertEquals(6, llw.lengthOfLastWord("luffy is still joyboy"));
+    }
+
+    @Test
     public void testAddBinary() {
         AddBinary ab = new AddBinary();
 
