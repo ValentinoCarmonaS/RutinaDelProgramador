@@ -29,4 +29,29 @@ public class ArrayTest {
         assertArrayEquals(new int[] {1,2}, test2);
         assertArrayEquals(new int[] {0,1}, test3);
     }
+
+    @Test
+    public void testRemoveElement() {
+        RemoveElement re = new RemoveElement();
+        int[] array1 = new int[]{3,2,2,3};
+        int[] array2 = new int[]{0,1,2,2,3,0,4,2};
+        int[] array3 = new int[]{2};
+        int[] array4 = new int[]{3};
+
+        int[] array5 = new int[]{2,2};
+        int[] array6 = new int[]{0,1,3,0,4};
+
+        assertEquals(2, re.removeElement(array1, 3));
+        for (int i = 0; i < 2; i++) {
+            assertEquals(array5[i], array1[i]);
+        }
+
+        assertEquals(5, re.removeElement(array2, 2));
+        for (int i = 0; i < 5; i++) {
+            assertEquals(array6[i], array2[i]);
+        }
+
+        assertEquals(1, re.removeElement(array3, 3));
+        assertEquals(0, re.removeElement(array4, 3));
+    }
 }
