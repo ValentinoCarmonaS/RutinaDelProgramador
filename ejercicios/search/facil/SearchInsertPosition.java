@@ -1,4 +1,4 @@
-package search;
+package search.facil;
 
 public class SearchInsertPosition {
     
