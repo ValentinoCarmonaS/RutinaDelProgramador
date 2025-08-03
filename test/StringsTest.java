@@ -49,4 +49,13 @@ public class StringsTest {
         assertEquals("100", ab.addBinary("11", "1"));
         assertEquals("10101", ab.addBinary("1010", "1011"));
     }
+
+    @Test
+    public void testValidPalindrome() {
+        ValidPalindrome vp = new ValidPalindrome();
+
+        assertEquals(true, vp.isPalindrome("A man, a plan, a canal: Panama"));
+        assertEquals(false, vp.isPalindrome("race a car"));
+        assertEquals(true, vp.isPalindrome(" %"));
+    }
 }
