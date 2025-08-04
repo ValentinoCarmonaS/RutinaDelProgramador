@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import helpers.TreeNode;
 import search.facil.*;
 
 public class SearchTest {

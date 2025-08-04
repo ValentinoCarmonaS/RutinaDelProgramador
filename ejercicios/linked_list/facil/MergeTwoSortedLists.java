@@ -1,5 +1,7 @@
 package linked_list.facil;
 
+import helpers.ListNode;
+
 public class MergeTwoSortedLists {
 
     /*

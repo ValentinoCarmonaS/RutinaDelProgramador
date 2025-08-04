@@ -1,4 +1,4 @@
-package linked_list.facil;
+package helpers;
 
 public class ListNode {
     public int val;
