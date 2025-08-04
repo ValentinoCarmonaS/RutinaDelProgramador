@@ -38,12 +38,10 @@ public class AbbTest {
         assertTrue(areTreesEqual(expected, result));
     }
 
-    // Método auxiliar para comparar dos árboles binarios
+    // Método auxiliar para comparar dos árboles binarios que a su vez
+    // prueba el que la clase IsSameTree funciona correctamente
     private boolean areTreesEqual(TreeNode a, TreeNode b) {
-        if (a == null && b == null) return true;
-        if (a == null || b == null) return false;
-        return a.val == b.val && 
-               areTreesEqual(a.left, b.left) && 
-               areTreesEqual(a.right, b.right);
+        IsSameTree ist = new IsSameTree();
+        return ist.isSameTree(a, b);
     }
 }
