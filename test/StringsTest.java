@@ -58,4 +58,14 @@ public class StringsTest {
         assertEquals(false, vp.isPalindrome("race a car"));
         assertEquals(true, vp.isPalindrome(" %"));
     }
+
+    @Test
+    public void testTitleToNumber() {
+        TitleToNumber ttn = new TitleToNumber();
+
+        assertEquals(1, ttn.titleToNumber("A"));
+        assertEquals(28, ttn.titleToNumber("AB"));
+        assertEquals(701, ttn.titleToNumber("ZY"));
+        assertEquals(0, ttn.titleToNumber(""));
+    }
 }
