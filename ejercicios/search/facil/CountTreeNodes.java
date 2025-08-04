@@ -3,6 +3,8 @@ package search.facil;
 import java.util.LinkedList;
 import java.util.Queue;
 
+import helpers.TreeNode;
+
 public class CountTreeNodes {
 
     /*
