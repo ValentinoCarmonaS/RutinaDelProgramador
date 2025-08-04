@@ -1,5 +1,6 @@
 package test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
@@ -36,6 +37,24 @@ public class AbbTest {
         expected.right = new TreeNode(3);
 
         assertTrue(areTreesEqual(expected, result));
+    }
+    
+    @Test
+    public void testMaxDepth() {
+        MaxDepth md = new MaxDepth();
+
+        TreeNode root1 = new TreeNode(3);
+        root1.left = new TreeNode(9);
+        root1.right = new TreeNode(20);
+        root1.right.left = new TreeNode(15);
+        root1.right.right = new TreeNode(7);
+
+        assertEquals(3, md.maxDepth(root1));
+
+        TreeNode root2 = new TreeNode(1);
+        root2.right = new TreeNode(2);
+
+        assertEquals(2, md.maxDepth(root2));
     }
 
     // Método auxiliar para comparar dos árboles binarios que a su vez
