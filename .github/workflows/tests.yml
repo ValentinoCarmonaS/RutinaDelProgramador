@@ -27,3 +27,11 @@ jobs:
       run: |
         chmod +x .github/scripts/run_tests.sh
         ./.github/scripts/run_tests.sh
+    
+    # 4. Generar badge dinámico con el total de tests
+    - name: Generate tests badge
+      run: |
+        # Crear el badge usando Shields.io dinámico
+        BADGE_URL="https://img.shields.io/badge/tests-${{ env.total_tests }}-ejecutados-blue"
+        echo "BADGE_URL=$BADGE_URL" >> $GITHUB_ENV
+      shell: bash
