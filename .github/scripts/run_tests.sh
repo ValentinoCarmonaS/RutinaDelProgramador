@@ -88,7 +88,6 @@ echo "📊 Resumen de Tests:"
 echo "   Total: $total_tests"
 echo -e "   ${GREEN}Pasaron: $passed_tests${NC}"
 echo -e "   ${RED}Fallaron: $failed_tests${NC}"
-echo "total_tests=$total_tests" >> $GITHUB_ENV
 
 if [ $failed_tests -eq 0 ]; then
     echo -e "\n${GREEN}Todo OK${NC}"
