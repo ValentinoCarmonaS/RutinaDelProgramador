@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import strings.facil.*;
+import strings.medio.*;
 
 public class StringsTest {
     @Test    
@@ -77,5 +78,18 @@ public class StringsTest {
         assertEquals("AB", ctt.convertToTitle(28));
         assertEquals("ZY", ctt.convertToTitle(701));
         assertEquals("AYS", ctt.convertToTitle(1345));
+    }
+
+    @Test
+    public void testLengthOfLongestSubstring() {
+        LengthOfLongestSubstring lls = new LengthOfLongestSubstring();
+
+        assertEquals(3, lls.lengthOfLongestSubstring("abcabcbb"));
+        assertEquals(1, lls.lengthOfLongestSubstring("bbbbb"));
+        assertEquals(3, lls.lengthOfLongestSubstring("pwwkew"));
+        assertEquals(4, lls.lengthOfLongestSubstring("abcabcbbabcd"));
+        assertEquals(7, lls.lengthOfLongestSubstring("Hola Ana, anana me guste"));
+        assertEquals(4, lls.lengthOfLongestSubstring("abcabcae"));
+        assertEquals(6, lls.lengthOfLongestSubstring("wobgrovw"));
     }
 }
