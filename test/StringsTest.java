@@ -68,4 +68,14 @@ public class StringsTest {
         assertEquals(701, ttn.titleToNumber("ZY"));
         assertEquals(0, ttn.titleToNumber(""));
     }
+
+    @Test
+    public void testConvertToTitle() {
+        ConvertToTitle ctt = new ConvertToTitle();
+
+        assertEquals("A", ctt.convertToTitle(1));
+        assertEquals("AB", ctt.convertToTitle(28));
+        assertEquals("ZY", ctt.convertToTitle(701));
+        assertEquals("AYS", ctt.convertToTitle(1345));
+    }
 }
