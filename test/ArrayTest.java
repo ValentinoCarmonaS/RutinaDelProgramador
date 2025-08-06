@@ -6,6 +6,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import array.facil.*;
+import array.medio.*;
 
 public class ArrayTest {
     @Test
@@ -19,8 +20,8 @@ public class ArrayTest {
     }
 
     @Test
-    public void testTwoSum() {
-        TwoSum array = new TwoSum();
+    public void testTwoSumFacil() {
+        array.facil.TwoSum array = new array.facil.TwoSum();
         int[] test1 = array.twoSum(new int[] {2,7,11,15}, 9);
         int[] test2 = array.twoSum(new int[] {3,2,4}, 6);
         int[] test3 = array.twoSum(new int[] {3,3}, 6);
@@ -72,5 +73,21 @@ public class ArrayTest {
 
         assertEquals(1, re.removeElement(array3, 3));
         assertEquals(0, re.removeElement(array4, 3));
+    }
+
+    @Test
+    public void testTwoSumMedio() {
+        array.medio.TwoSum sum = new array.medio.TwoSum();
+        int[] test1 = sum.twoSum(new int[] {2,7,11,15}, 9);
+        int[] test2 = sum.twoSum(new int[] {2,3,4}, 6);
+        int[] test3 = sum.twoSum(new int[] {-1,0}, -1);
+        int[] test4 = sum.twoSum(new int[] {2,7,11,15}, 9);
+        int[] test5 = sum.twoSum(new int[] {2,3,4,6,8,16}, 9);
+
+        assertArrayEquals(new int[] {1,2}, test1);
+        assertArrayEquals(new int[] {1,3}, test2);
+        assertArrayEquals(new int[] {1,2}, test3);
+        assertArrayEquals(new int[] {1,2}, test4);
+        assertArrayEquals(new int[] {2,4}, test5);
     }
 }
