@@ -9,6 +9,7 @@ import org.junit.Test;
 import graph.medio.KeysAndRooms;
 import graph.medio.MaxAreaOfIsland;
 import graph.medio.NumIslands;
+import graph.medio.OrangesRotting;
 
 public class GraphTest {
     
@@ -73,5 +74,31 @@ public class GraphTest {
 
         assertEquals(1, ni.numIslands(grid1));
         assertEquals(3, ni.numIslands(grid2));
+    }
+
+    @Test
+    public void testOrangesRotting() {
+        OrangesRotting or = new OrangesRotting();
+        int[][] grid1 = {
+            {2,1,1},
+            {1,1,0},
+            {0,1,1}
+        };
+        int[][] grid2 = {
+            {2,1,1},
+            {0,1,1},
+            {1,0,1}
+        };
+        int[][] grid3 = {{0,2}};
+        int[][] grid4 = {
+            {2,1,1},
+            {1,1,1},
+            {0,1,2}
+        };
+
+        assertEquals(4, or.orangesRotting(grid1));
+        assertEquals(-1, or.orangesRotting(grid2));
+        assertEquals(0, or.orangesRotting(grid3));
+        assertEquals(2, or.orangesRotting(grid4));
     }
 }
