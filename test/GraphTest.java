@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import graph.medio.KeysAndRooms;
 import graph.medio.MaxAreaOfIsland;
+import graph.medio.NumIslands;
 
 public class GraphTest {
     
@@ -50,5 +51,27 @@ public class GraphTest {
                     Arrays.asList(2),
                     Arrays.asList(0)
                 )));
+    }
+
+    @Test
+    public void testNumIslands() {
+        NumIslands ni = new NumIslands();
+
+        char[][] grid1 = {
+            {'1','1','1','1','0'},
+            {'1','1','0','1','0'},
+            {'1','1','0','0','0'},
+            {'0','0','0','0','0'}
+        };
+
+        char[][] grid2 = {
+            {'1','1','0','0','0'},
+            {'1','1','0','0','0'},
+            {'0','0','1','0','0'},
+            {'0','0','0','1','1'}
+        };
+
+        assertEquals(1, ni.numIslands(grid1));
+        assertEquals(3, ni.numIslands(grid2));
     }
 }
