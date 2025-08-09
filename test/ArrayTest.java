@@ -90,4 +90,15 @@ public class ArrayTest {
         assertArrayEquals(new int[] {1,2}, test4);
         assertArrayEquals(new int[] {2,4}, test5);
     }
+
+    @Test
+    public void testMinSubArrayLen() {
+        MinSubArrayLen msal = new MinSubArrayLen();
+
+        assertEquals(2, msal.minSubArrayLen(7, new int[] {2,3,1,2,4,3}));
+        assertEquals(1, msal.minSubArrayLen(4, new int[] {1,4,4}));
+        assertEquals(0, msal.minSubArrayLen(11, new int[] {1,1,1,1,1,1,1,1}));
+        assertEquals(1, msal.minSubArrayLen(2, new int[] {3,1,4,3}));
+        assertEquals(4, msal.minSubArrayLen(10, new int[] {2,3,1,2,4,3}));
+    }
 }
