@@ -92,4 +92,15 @@ public class StringsTest {
         assertEquals(4, lls.lengthOfLongestSubstring("abcabcae"));
         assertEquals(6, lls.lengthOfLongestSubstring("wobgrovw"));
     }
+
+    @Test
+    public void testCharacterReplacement() {
+        CharacterReplacement cr = new CharacterReplacement();
+
+        assertEquals(4, cr.characterReplacement("AABABBAB", 1));
+        assertEquals(4, cr.characterReplacement("AABABBA", 1));
+        assertEquals(4, cr.characterReplacement("ABBB", 2));
+        assertEquals(1, cr.characterReplacement("A", 0));
+        assertEquals(4, cr.characterReplacement("AABABBAB", 1));
+    }
 }
