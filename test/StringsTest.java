@@ -1,6 +1,9 @@
 package test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -102,5 +105,14 @@ public class StringsTest {
         assertEquals(4, cr.characterReplacement("ABBB", 2));
         assertEquals(1, cr.characterReplacement("A", 0));
         assertEquals(4, cr.characterReplacement("AABABBAB", 1));
+    }
+
+    @Test
+    public void testFindRepeatedDnaSequences() {
+        FindRepeatedDnaSequences frds = new FindRepeatedDnaSequences();
+
+        assertEquals(Arrays.asList("AAAAACCCCC","CCCCCAAAAA"), frds.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+        assertEquals(Arrays.asList("AAAAAAAAAA"), frds.findRepeatedDnaSequences("AAAAAAAAAAAAA"));
+        assertEquals(Arrays.asList(), frds.findRepeatedDnaSequences("a"));
     }
 }
