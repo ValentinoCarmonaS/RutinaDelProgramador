@@ -1,6 +1,9 @@
 package test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+
+import java.util.Arrays;
 
 import org.junit.Test;
 
@@ -91,5 +94,25 @@ public class StringsTest {
         assertEquals(7, lls.lengthOfLongestSubstring("Hola Ana, anana me guste"));
         assertEquals(4, lls.lengthOfLongestSubstring("abcabcae"));
         assertEquals(6, lls.lengthOfLongestSubstring("wobgrovw"));
+    }
+
+    @Test
+    public void testCharacterReplacement() {
+        CharacterReplacement cr = new CharacterReplacement();
+
+        assertEquals(4, cr.characterReplacement("AABABBAB", 1));
+        assertEquals(4, cr.characterReplacement("AABABBA", 1));
+        assertEquals(4, cr.characterReplacement("ABBB", 2));
+        assertEquals(1, cr.characterReplacement("A", 0));
+        assertEquals(4, cr.characterReplacement("AABABBAB", 1));
+    }
+
+    @Test
+    public void testFindRepeatedDnaSequences() {
+        FindRepeatedDnaSequences frds = new FindRepeatedDnaSequences();
+
+        assertEquals(Arrays.asList("AAAAACCCCC","CCCCCAAAAA"), frds.findRepeatedDnaSequences("AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"));
+        assertEquals(Arrays.asList("AAAAAAAAAA"), frds.findRepeatedDnaSequences("AAAAAAAAAAAAA"));
+        assertEquals(Arrays.asList(), frds.findRepeatedDnaSequences("a"));
     }
 }
