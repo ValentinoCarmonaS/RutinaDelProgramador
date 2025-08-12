@@ -1,5 +1,5 @@
 ![Tests](https://github.com/ValentinoCarmonaS/RutinaDelProgramador/actions/workflows/tests.yml/badge.svg)
-![Tests](https://img.shields.io/badge/Total_Problems_Solved-+28-blue)
+![Tests](https://img.shields.io/badge/Total_Problems_Solved-+36-blue)
 
 # Rutina del Programador
 
