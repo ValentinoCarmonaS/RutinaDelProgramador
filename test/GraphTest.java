@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,6 +14,7 @@ import java.util.Stack;
 
 import org.junit.Test;
 
+import graph.medio.CanFinish;
 import graph.medio.CloneGraph;
 import graph.medio.KeysAndRooms;
 import graph.medio.MaxAreaOfIsland;
@@ -177,6 +179,14 @@ public class GraphTest {
         }
         
         return true;
+    }
+
+    @Test
+    public void testCanFinish() {
+        CanFinish cf = new CanFinish();
+
+        assertEquals(true, cf.canFinish(2, new int[][] {{1,0}}));
+        assertEquals(false, cf.canFinish(2, new int[][] {{1,0}, {0,1}}));
     }
 }
 
