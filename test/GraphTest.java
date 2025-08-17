@@ -2,14 +2,13 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.Stack;
 
 import org.junit.Test;
@@ -20,26 +19,26 @@ import graph.medio.KeysAndRooms;
 import graph.medio.MaxAreaOfIsland;
 import graph.medio.NumIslands;
 import graph.medio.OrangesRotting;
+import graph.medio.PacificAtlantic;
 import helpers.Node;
-import helpers.TreeNode;
 
 public class GraphTest {
-    
+
     @Test
     public void testMaxAreaOfIsland() {
         MaxAreaOfIsland mai = new MaxAreaOfIsland();
         int[][] grid1 = {
-            {0,0,1,0,0,0,0,1,0,0,0,0,0},
-            {0,0,0,0,0,0,0,1,1,1,0,0,0},
-            {0,1,1,0,1,0,0,0,0,0,0,0,0},
-            {0,1,0,0,1,1,0,0,1,0,1,0,0},
-            {0,1,0,0,1,1,0,0,1,1,1,0,0},
-            {0,0,0,0,0,0,0,0,0,0,1,0,0},
-            {0,0,0,0,0,0,0,1,1,1,0,0,0},
-            {0,0,0,0,0,0,0,1,1,0,0,0,0}
+                { 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
+                { 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0 },
+                { 0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0 }
         };
 
-        int[][] grid2 = {{0,0,0,0,0,0,0,0}};
+        int[][] grid2 = { { 0, 0, 0, 0, 0, 0, 0, 0 } };
 
         assertEquals(6, mai.maxAreaOfIsland(grid1));
         assertEquals(0, mai.maxAreaOfIsland(grid2));
@@ -48,22 +47,20 @@ public class GraphTest {
     @Test
     public void testCanVisitAllRooms() {
         KeysAndRooms kar = new KeysAndRooms();
-        
+
         assertEquals(true, kar.canVisitAllRooms(
                 Arrays.asList(
-                    Arrays.asList(1),
-                    Arrays.asList(2),
-                    Arrays.asList(3),
-                    Arrays.asList()
-                )));
-        
+                        Arrays.asList(1),
+                        Arrays.asList(2),
+                        Arrays.asList(3),
+                        Arrays.asList())));
+
         assertEquals(false, kar.canVisitAllRooms(
                 Arrays.asList(
-                    Arrays.asList(1,3),
-                    Arrays.asList(3,0,1),
-                    Arrays.asList(2),
-                    Arrays.asList(0)
-                )));
+                        Arrays.asList(1, 3),
+                        Arrays.asList(3, 0, 1),
+                        Arrays.asList(2),
+                        Arrays.asList(0))));
     }
 
     @Test
@@ -71,17 +68,17 @@ public class GraphTest {
         NumIslands ni = new NumIslands();
 
         char[][] grid1 = {
-            {'1','1','1','1','0'},
-            {'1','1','0','1','0'},
-            {'1','1','0','0','0'},
-            {'0','0','0','0','0'}
+                { '1', '1', '1', '1', '0' },
+                { '1', '1', '0', '1', '0' },
+                { '1', '1', '0', '0', '0' },
+                { '0', '0', '0', '0', '0' }
         };
 
         char[][] grid2 = {
-            {'1','1','0','0','0'},
-            {'1','1','0','0','0'},
-            {'0','0','1','0','0'},
-            {'0','0','0','1','1'}
+                { '1', '1', '0', '0', '0' },
+                { '1', '1', '0', '0', '0' },
+                { '0', '0', '1', '0', '0' },
+                { '0', '0', '0', '1', '1' }
         };
 
         assertEquals(1, ni.numIslands(grid1));
@@ -92,20 +89,20 @@ public class GraphTest {
     public void testOrangesRotting() {
         OrangesRotting or = new OrangesRotting();
         int[][] grid1 = {
-            {2,1,1},
-            {1,1,0},
-            {0,1,1}
+                { 2, 1, 1 },
+                { 1, 1, 0 },
+                { 0, 1, 1 }
         };
         int[][] grid2 = {
-            {2,1,1},
-            {0,1,1},
-            {1,0,1}
+                { 2, 1, 1 },
+                { 0, 1, 1 },
+                { 1, 0, 1 }
         };
-        int[][] grid3 = {{0,2}};
+        int[][] grid3 = { { 0, 2 } };
         int[][] grid4 = {
-            {2,1,1},
-            {1,1,1},
-            {0,1,2}
+                { 2, 1, 1 },
+                { 1, 1, 1 },
+                { 0, 1, 2 }
         };
 
         assertEquals(4, or.orangesRotting(grid1));
@@ -117,13 +114,13 @@ public class GraphTest {
     @Test
     public void testCloneGraph() {
         CloneGraph cloner = new CloneGraph();
-    
+
         // Test Case 1: Grafo normal
         Node node1 = new Node(1);
         Node node2 = new Node(2);
         Node node3 = new Node(3);
         Node node4 = new Node(4);
-        
+
         node1.neighbors.add(node2);
         node1.neighbors.add(node4);
         node2.neighbors.add(node1);
@@ -132,52 +129,57 @@ public class GraphTest {
         node3.neighbors.add(node4);
         node4.neighbors.add(node1);
         node4.neighbors.add(node3);
-        
+
         Node cloned1 = cloner.cloneGraph(node1);
         assertGraphEquals(node1, cloned1);
-        
+
         // Test Case 2: Grafo con un solo nodo sin vecinos
         Node singleNode = new Node(1);
         Node clonedSingle = cloner.cloneGraph(singleNode);
         assertGraphEquals(singleNode, clonedSingle);
-        
+
         // Test Case 3: Grafo vacío
         Node nullNode = null;
         Node clonedNull = cloner.cloneGraph(nullNode);
         assertNull(clonedNull);
     }
-    
+
     private boolean assertGraphEquals(Node original, Node clone) {
-        if (original == null && clone == null) return true;
-        if (original == null || clone == null) return false;
-        
+        if (original == null && clone == null)
+            return true;
+        if (original == null || clone == null)
+            return false;
+
         Map<Node, Node> visited = new HashMap<>();
         Stack<Node[]> stack = new Stack<>();
-        stack.push(new Node[]{original, clone});
-        
+        stack.push(new Node[] { original, clone });
+
         while (!stack.isEmpty()) {
             Node[] pair = stack.pop();
             Node orig = pair[0];
             Node clon = pair[1];
-            
+
             // Comprobaciones básicas
-            if (orig.val != clon.val) return false;
-            if (orig.neighbors.size() != clon.neighbors.size()) return false;
-            
+            if (orig.val != clon.val)
+                return false;
+            if (orig.neighbors.size() != clon.neighbors.size())
+                return false;
+
             // Comprobamos si ya hemos mapeado este nodo
             if (visited.containsKey(orig)) {
-                if (visited.get(orig) != clon) return false;
+                if (visited.get(orig) != clon)
+                    return false;
                 continue;
             }
-            
+
             visited.put(orig, clon);
-            
+
             // Preparamos los vecinos para comparación
             for (int i = 0; i < orig.neighbors.size(); i++) {
-                stack.push(new Node[]{orig.neighbors.get(i), clon.neighbors.get(i)});
+                stack.push(new Node[] { orig.neighbors.get(i), clon.neighbors.get(i) });
             }
         }
-        
+
         return true;
     }
 
@@ -185,8 +187,86 @@ public class GraphTest {
     public void testCanFinish() {
         CanFinish cf = new CanFinish();
 
-        assertEquals(true, cf.canFinish(2, new int[][] {{1,0}}));
-        assertEquals(false, cf.canFinish(2, new int[][] {{1,0}, {0,1}}));
+        assertEquals(true, cf.canFinish(2, new int[][] { { 1, 0 } }));
+        assertEquals(false, cf.canFinish(2, new int[][] { { 1, 0 }, { 0, 1 } }));
+    }
+
+    @Test
+    public void testPacificAtlantic() {
+        PacificAtlantic pa = new PacificAtlantic();
+
+        // Test case 1: Example from problem description
+        int[][] heights1 = {
+                { 1, 2, 2, 3, 5 },
+                { 3, 2, 3, 4, 4 },
+                { 2, 4, 5, 3, 1 },
+                { 6, 7, 1, 4, 5 },
+                { 5, 1, 1, 2, 4 }
+        };
+        List<List<Integer>> expected1 = Arrays.asList(
+                Arrays.asList(0, 4),
+                Arrays.asList(1, 3),
+                Arrays.asList(1, 4),
+                Arrays.asList(2, 2),
+                Arrays.asList(3, 0),
+                Arrays.asList(3, 1),
+                Arrays.asList(4, 0));
+        List<List<Integer>> result1 = pa.pacificAtlantic(heights1);
+        Collections.sort(result1, (a, b) -> {
+            if (a.get(0).equals(b.get(0))) {
+                return a.get(1).compareTo(b.get(1));
+            }
+            return a.get(0).compareTo(b.get(0));
+        });
+        assertEquals(expected1, result1);
+
+        // Test case 2: Single cell
+        int[][] heights2 = { { 1 } };
+        List<List<Integer>> expected2 = Arrays.asList(
+                Arrays.asList(0, 0));
+        assertEquals(expected2, pa.pacificAtlantic(heights2));
+
+        // Additional test case: Small 2x2 matrix
+        int[][] heights4 = {
+                { 1, 2 },
+                { 3, 4 }
+        };
+        List<List<Integer>> result4 = pa.pacificAtlantic(heights4);
+        List<List<Integer>> expected4 = Arrays.asList(
+                Arrays.asList(0, 1),
+                Arrays.asList(1, 0),
+                Arrays.asList(1, 1));
+        Collections.sort(result4, (a, b) -> {
+            if (a.get(0).equals(b.get(0))) {
+                return a.get(1).compareTo(b.get(1));
+            }
+            return a.get(0).compareTo(b.get(0));
+        });
+        assertEquals(expected4, result4);
+
+        // Additional test case: All same height
+        int[][] heights5 = {
+                { 1, 1, 1 },
+                { 1, 1, 1 },
+                { 1, 1, 1 }
+        };
+        List<List<Integer>> result5 = pa.pacificAtlantic(heights5);
+        List<List<Integer>> expected5 = Arrays.asList(
+                Arrays.asList(0, 0),
+                Arrays.asList(0, 1),
+                Arrays.asList(0, 2),
+                Arrays.asList(1, 0),
+                Arrays.asList(1, 1),
+                Arrays.asList(1, 2),
+                Arrays.asList(2, 0),
+                Arrays.asList(2, 1),
+                Arrays.asList(2, 2));
+        Collections.sort(result5, (a, b) -> {
+            if (a.get(0).equals(b.get(0))) {
+                return a.get(1).compareTo(b.get(1));
+            }
+            return a.get(0).compareTo(b.get(0));
+        });
+        assertEquals(expected5, result5);
     }
 }
-
