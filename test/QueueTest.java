@@ -59,7 +59,7 @@ public class QueueTest {
         assertEquals(4, fkl.findKthLargest(new int[] {3,2,3,1,2,4,5,5,6}, 4));
 
         try {
-            int[] test3 = ArrayFromFile.arrayFromFile("ejercicios\\helpers\\testHelpers\\txt\\testFindKthLargest.txt");
+            int[] test3 = ArrayFromFile.arrayFromFile("ejercicios/helpers/testHelpers/txt/testFindKthLargest.txt");
             assertEquals(1, fkl.findKthLargest(test3, 50000));
         } catch (IOException e) {
             fail("No se cargo el test3 testFindKthLargest.txt y ocurrio el error: " + e);
