@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 
@@ -135,10 +136,10 @@ public class ArrayTest {
         assertEquals(1, ma.maxArea(new int[] {1,1}));
         
         try {
-            test3 = ArrayFromFile.arrayFromFile("./testHelpers/txt/testMaxArea.txt");
-            assertEquals(49, ma.maxArea(test3));
+            test3 = ArrayFromFile.arrayFromFile("test\\testHelpers\\txt\\testMaxArea.txt");
+            assertEquals(705634720, ma.maxArea(test3));
         } catch (IOException e) {
-            System.out.print("No pudo cargarse la prueba 3 de Max Area");
+            fail("No pudo cargarse la prueba 3 de Max Area con error: " + e);
         }
     }
 }
