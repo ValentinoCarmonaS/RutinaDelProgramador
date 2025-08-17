@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import array.facil.*;
 import array.medio.*;
-import test.testHelpers.helpers.ArrayFromFile;
+import helpers.testHelpers.helpers.ArrayFromFile;
 
 
 public class ArrayTest {
@@ -136,7 +136,7 @@ public class ArrayTest {
         assertEquals(1, ma.maxArea(new int[] {1,1}));
         
         try {
-            test3 = ArrayFromFile.arrayFromFile("test\\testHelpers\\txt\\testMaxArea.txt");
+            test3 = ArrayFromFile.arrayFromFile("ejercicios\\helpers\\testHelpers\\txt\\testMaxArea.txt");
             assertEquals(705634720, ma.maxArea(test3));
         } catch (IOException e) {
             fail("No pudo cargarse la prueba 3 de Max Area con error: " + e);

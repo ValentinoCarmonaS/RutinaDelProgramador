@@ -1,4 +1,4 @@
-package test.testHelpers.helpers;
+package helpers.testHelpers.helpers;
 
 import java.util.LinkedList;
 import java.util.Queue;
