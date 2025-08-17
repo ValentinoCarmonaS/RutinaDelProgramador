@@ -135,7 +135,7 @@ public class ArrayTest {
         assertEquals(1, ma.maxArea(new int[] {1,1}));
         
         try {
-            test3 = ArrayFromFile.arrayFromFile("./testMaxArea.txt");
+            test3 = ArrayFromFile.arrayFromFile("./testHelpers/txt/testMaxArea.txt");
             assertEquals(49, ma.maxArea(test3));
         } catch (IOException e) {
             System.out.print("No pudo cargarse la prueba 3 de Max Area");
