@@ -2,9 +2,13 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.junit.Test;
 
 import Queue.facil.MyStack;
+import Queue.medio.FindKthLargest;
+import test.testHelpers.helpers.ArrayFromFile;
 
 public class QueueTest {
     
@@ -44,5 +48,20 @@ public class QueueTest {
         assertEquals(false, stack.empty());
         assertEquals(1, stack.pop());
         assertEquals(true, stack.empty());
+    }
+
+    @Test
+    public void testFindKthLargest() {
+        FindKthLargest fkl = new FindKthLargest();
+
+        assertEquals(5, fkl.findKthLargest(new int[] {3,2,1,5,6,4}, 2));
+        assertEquals(4, fkl.findKthLargest(new int[] {3,2,3,1,2,4,5,5,6}, 4));
+
+        try {
+            int[] test3 = ArrayFromFile.arrayFromFile("./testHelpers/txt/testFindKthLargest.txt");
+            assertEquals(null, fkl.findKthLargest(test3, 50000));
+        } catch (IOException e) {
+            System.out.println("No se cargo el test3 testFindKthLargest.txt y ocurrio el error: " + e);
+        }
     }
 }

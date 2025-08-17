@@ -3,10 +3,14 @@ package test;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
+
 import org.junit.Test;
 
 import array.facil.*;
 import array.medio.*;
+import test.testHelpers.helpers.ArrayFromFile;
+
 
 public class ArrayTest {
     @Test
@@ -119,6 +123,22 @@ public class ArrayTest {
         int[] array2Ans = new int[] { 1, 2 };
         for (int i = 0; i < 2; i++) {
             assertEquals(array2Ans[i], array2[i]);
+        }
+    }
+
+    @Test
+    public void testMaxArea() {
+        MaxArea ma = new MaxArea();
+        int[] test3;
+
+        assertEquals(49, ma.maxArea(new int[] {1,8,6,2,5,4,8,3,7}));
+        assertEquals(1, ma.maxArea(new int[] {1,1}));
+        
+        try {
+            test3 = ArrayFromFile.arrayFromFile("./testHelpers/txt/testMaxArea.txt");
+            assertEquals(49, ma.maxArea(test3));
+        } catch (IOException e) {
+            System.out.print("No pudo cargarse la prueba 3 de Max Area");
         }
     }
 }
