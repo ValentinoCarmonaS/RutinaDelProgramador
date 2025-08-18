@@ -1,5 +1,6 @@
 package test;
 
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
@@ -9,10 +10,11 @@ import org.junit.Test;
 
 import Queue.facil.MyStack;
 import Queue.medio.FindKthLargest;
+import Queue.medio.TopKFrequent;
 import helpers.testHelpers.helpers.ArrayFromFile;
 
 public class QueueTest {
-    
+
     @Test
     public void testMyStack() {
         MyStack stack = new MyStack();
@@ -24,7 +26,7 @@ public class QueueTest {
         assertEquals(2, stack.top());
         assertEquals(2, stack.pop());
         assertEquals(false, stack.empty());
-        
+
         stack = new MyStack();
         stack.push(1);
         assertEquals(false, stack.empty());
@@ -55,8 +57,8 @@ public class QueueTest {
     public void testFindKthLargest() {
         FindKthLargest fkl = new FindKthLargest();
 
-        assertEquals(5, fkl.findKthLargest(new int[] {3,2,1,5,6,4}, 2));
-        assertEquals(4, fkl.findKthLargest(new int[] {3,2,3,1,2,4,5,5,6}, 4));
+        assertEquals(5, fkl.findKthLargest(new int[] { 3, 2, 1, 5, 6, 4 }, 2));
+        assertEquals(4, fkl.findKthLargest(new int[] { 3, 2, 3, 1, 2, 4, 5, 5, 6 }, 4));
 
         try {
             int[] test3 = ArrayFromFile.arrayFromFile("ejercicios/helpers/testHelpers/txt/testFindKthLargest.txt");
@@ -64,5 +66,14 @@ public class QueueTest {
         } catch (IOException e) {
             fail("No se cargo el test3 testFindKthLargest.txt y ocurrio el error: " + e);
         }
+    }
+
+    @Test
+    public void testTopKFrequent() {
+        TopKFrequent tkf = new TopKFrequent();
+
+        assertArrayEquals(new int[] { 2, 1 }, tkf.topKFrequent(new int[] { 1, 1, 1, 2, 2, 3 }, 2));
+        assertArrayEquals(new int[] { 1 }, tkf.topKFrequent(new int[] { 1 }, 1));
+        assertArrayEquals(new int[] { -1, 2 }, tkf.topKFrequent(new int[] { 4, 1, -1, 2, -1, 2, 3 }, 2));
     }
 }
