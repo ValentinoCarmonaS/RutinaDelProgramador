@@ -12,7 +12,6 @@ import array.facil.*;
 import array.medio.*;
 import helpers.testHelpers.helpers.ArrayFromFile;
 
-
 public class ArrayTest {
     @Test
     public void testLongestCommonPrefix() {
@@ -132,14 +131,28 @@ public class ArrayTest {
         MaxArea ma = new MaxArea();
         int[] test3;
 
-        assertEquals(49, ma.maxArea(new int[] {1,8,6,2,5,4,8,3,7}));
-        assertEquals(1, ma.maxArea(new int[] {1,1}));
-        
+        assertEquals(49, ma.maxArea(new int[] { 1, 8, 6, 2, 5, 4, 8, 3, 7 }));
+        assertEquals(1, ma.maxArea(new int[] { 1, 1 }));
+
         try {
             test3 = ArrayFromFile.arrayFromFile("ejercicios/helpers/testHelpers/txt/testMaxArea.txt");
             assertEquals(705634720, ma.maxArea(test3));
         } catch (IOException e) {
             fail("No pudo cargarse la prueba 3 de Max Area con error: " + e);
         }
+    }
+
+    @Test
+    public void testSmallestEqual() {
+        SmallestEqual se = new SmallestEqual();
+
+        int[] array1 = { 0, 1, 2 };
+        assertEquals(0, se.smallestEqual(array1));
+
+        int[] array2 = { 4, 3, 2, 1 };
+        assertEquals(2, se.smallestEqual(array2));
+
+        int[] array3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+        assertEquals(-1, se.smallestEqual(array3));
     }
 }
