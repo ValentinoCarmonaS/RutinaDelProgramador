@@ -155,4 +155,19 @@ public class ArrayTest {
         int[] array3 = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
         assertEquals(-1, se.smallestEqual(array3));
     }
+
+    @Test
+    public void testLargestTriangleArea() {
+        LargestTriangleArea lta = new LargestTriangleArea();
+
+        int[][] points1 = { { 0, 0 }, { 0, 1 }, { 1, 0 }, { 0, 2 }, { 2, 0 } };
+        int[][] points2 = { { 1, 0 }, { 0, 0 }, { 0, 1 } };
+        int[][] points3 = { { 1, 0 }, { -1, -2 }, { -3, 1 } };
+        int[][] points4 = { { 9, 0 }, { 0, 2 }, { 3, 1 }, { 10, 8 } };
+
+        assertEquals(2.00000, lta.largestTriangleArea(points1), 0.00001);
+        assertEquals(0.50000, lta.largestTriangleArea(points2), 0.00001);
+        assertEquals(5.00000, lta.largestTriangleArea(points3), 0.00001);
+        assertEquals(37.00000, lta.largestTriangleArea(points4), 0.00001);
+    }
 }
