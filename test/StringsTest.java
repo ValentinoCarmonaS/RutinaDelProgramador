@@ -115,4 +115,19 @@ public class StringsTest {
         assertEquals(Arrays.asList("AAAAAAAAAA"), frds.findRepeatedDnaSequences("AAAAAAAAAAAAA"));
         assertEquals(Arrays.asList(), frds.findRepeatedDnaSequences("a"));
     }
+
+    @Test
+    public void testFindIndexFirstOccurrenceInString() {
+        StrStr strstr = new StrStr();
+
+        String haystack1 = "sadbutsad";
+        String haystack2 = "leetcode";
+        String haystack3 = "a";
+        String haystack4 = "mississippi";
+
+        assertEquals(0, strstr.strStr(haystack1, "sad"));
+        assertEquals(-1, strstr.strStr(haystack2, "leeto"));
+        assertEquals(0, strstr.strStr(haystack3, "a"));
+        assertEquals(-1, strstr.strStr(haystack4, "issipi"));
+    }
 }
