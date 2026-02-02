@@ -130,4 +130,21 @@ public class StringsTest {
         assertEquals(0, strstr.strStr(haystack3, "a"));
         assertEquals(-1, strstr.strStr(haystack4, "issipi"));
     }
+
+    @Test
+    public void testCountConsistentStrings() {
+        CountConsistentStrings ccs = new CountConsistentStrings();
+
+        String allowed1 = "ab";
+        String allowed2 = "abc";
+        String allowed3 = "cad";
+
+        String[] words1 = {"ad","bd","aaab","baa","badab"};
+        String[] words2 = {"a","b","c","ab","ac","bc","abc"};
+        String[] words3 = {"cc","acd","b","ba","bac","bad","ac","d"};
+
+        assertEquals(2, ccs.countConsistentStrings(allowed1, words1));
+        assertEquals(7, ccs.countConsistentStrings(allowed2, words2));
+        assertEquals(4, ccs.countConsistentStrings(allowed3, words3));
+    }
 }
