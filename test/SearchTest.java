@@ -52,4 +52,16 @@ public class SearchTest {
         assertEquals(4, s.search(new int[] { -1,0,3,5,9,12 }, 9));
         assertEquals(-1, s.search(new int[] { -1,0,3,5,9,12 }, 2));
     }
+
+    @Test
+    public void testArrangeCoins() {
+        ArrangeCoins ac = new ArrangeCoins();
+
+        assertEquals(2, ac.arrangeCoins(5));
+        assertEquals(3, ac.arrangeCoins(8));
+        assertEquals(1, ac.arrangeCoins(1));
+        assertEquals(1, ac.arrangeCoins(2));
+        assertEquals(60070, ac.arrangeCoins(1804289383));
+        assertEquals(65535, ac.arrangeCoins(2147483647));
+    }
 }
