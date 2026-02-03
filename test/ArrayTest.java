@@ -183,4 +183,21 @@ public class ArrayTest {
         assertEquals(0, mo.minOperations(array2, 4));
         assertEquals(5, mo.minOperations(array3, 6));
     }
+
+    @Test
+    public void testBuildArray() {
+        BuildArray ba = new BuildArray();
+
+        int[] array1 = { 0, 2, 1, 5, 3, 4 };
+        int[] array2 = { 5, 0, 1, 2, 3, 4 };
+        int[] array3 = { 3, 2, 1, 0 };
+
+        assertArrayEquals(new int[] { 0, 1, 2, 4, 5, 3 }, ba.buildArray1(array1));
+        assertArrayEquals(new int[] { 4, 5, 0, 1, 2, 3 }, ba.buildArray1(array2));
+        assertArrayEquals(new int[] { 0, 1, 2, 3 }, ba.buildArray1(array3));
+
+        assertArrayEquals(new int[] { 0, 1, 2, 4, 5, 3 }, ba.buildArray2(array1));
+        assertArrayEquals(new int[] { 4, 5, 0, 1, 2, 3 }, ba.buildArray2(array2));
+        assertArrayEquals(new int[] { 0, 1, 2, 3 }, ba.buildArray2(array3));
+    }
 }
