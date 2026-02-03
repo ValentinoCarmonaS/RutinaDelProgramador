@@ -170,4 +170,17 @@ public class ArrayTest {
         assertEquals(5.00000, lta.largestTriangleArea(points3), 0.00001);
         assertEquals(37.00000, lta.largestTriangleArea(points4), 0.00001);
     }
+
+    @Test
+    public void testMinOperations() {
+        MinOperations mo = new MinOperations();
+
+        int[] array1 = { 3, 9, 7 };
+        int[] array2 = { 4, 1, 3 };
+        int[] array3 = { 3, 2 };
+
+        assertEquals(4, mo.minOperations(array1, 5));
+        assertEquals(0, mo.minOperations(array2, 4));
+        assertEquals(5, mo.minOperations(array3, 6));
+    }
 }
