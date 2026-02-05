@@ -147,4 +147,25 @@ public class StringsTest {
         assertEquals(7, ccs.countConsistentStrings(allowed2, words2));
         assertEquals(4, ccs.countConsistentStrings(allowed3, words3));
     }
+
+    @Test
+    public void testScoreOfString() {
+        ScoreOfString ss = new ScoreOfString();
+
+        assertEquals(13, ss.scoreOfString("hello"));
+        assertEquals(50, ss.scoreOfString("zaz"));
+    }
+
+    @Test
+    public void testFinalValueAfterOperations() {
+        FinalValueAfterOperations fvao = new FinalValueAfterOperations();
+
+        String[] array1 = {"--X","X++","X++"};
+        String[] array2 = {"++X","++X","X++"};
+        String[] array3 = {"X++","++X","--X","X--"};
+
+        assertEquals(1, fvao.finalValueAfterOperations(array1));
+        assertEquals(3, fvao.finalValueAfterOperations(array2));
+        assertEquals(0, fvao.finalValueAfterOperations(array3));
+    }
 }
