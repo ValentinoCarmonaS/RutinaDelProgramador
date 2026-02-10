@@ -214,4 +214,15 @@ public class ArrayTest {
         assertArrayEquals(ans1, gc.getConcatenation(array1));
         assertArrayEquals(ans2, gc.getConcatenation(array2));
     }
+
+    @Test
+    public void testAlternatingSum() {
+        AlternatingSum as = new AlternatingSum();
+
+        int[] array1 = {1,3,5,7};
+        int[] array2 = {100};
+
+        assertEquals(-4, as.alternatingSum(array1));
+        assertEquals(100, as.alternatingSum(array2));
+    }
 }
