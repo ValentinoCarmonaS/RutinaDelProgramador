@@ -200,4 +200,18 @@ public class ArrayTest {
         assertArrayEquals(new int[] { 4, 5, 0, 1, 2, 3 }, ba.buildArray2(array2));
         assertArrayEquals(new int[] { 0, 1, 2, 3 }, ba.buildArray2(array3));
     }
+
+    @Test
+    public void testGetConcatenation() {
+        GetConcatenation gc = new GetConcatenation();
+
+        int[] array1 = {1,2,1};
+        int[] array2 = {1,3,2,1};
+
+        int[] ans1 = {1,2,1,1,2,1};
+        int[] ans2 = {1,3,2,1,1,3,2,1};
+
+        assertArrayEquals(ans1, gc.getConcatenation(array1));
+        assertArrayEquals(ans2, gc.getConcatenation(array2));
+    }
 }
