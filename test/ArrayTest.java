@@ -269,4 +269,15 @@ public class ArrayTest {
         assertArrayEquals(ans1, pa.pivotArray(nums1, 10));
         assertArrayEquals(ans2, pa.pivotArray(nums2, 2));
     }
+
+    @Test
+    public void testFindNumbers() {
+        FindNumbers fn = new FindNumbers();
+
+        int[] nums1 = {12,345,2,6,7896};
+        int[] nums2 = {555,901,482,1771};
+
+        assertEquals(2, fn.findNumbers(nums1));
+        assertEquals(1, fn.findNumbers(nums2));
+    }
 }
