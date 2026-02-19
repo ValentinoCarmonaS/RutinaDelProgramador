@@ -242,4 +242,17 @@ public class ArrayTest {
         assertArrayEquals(ans1, ro.recoverOrder(order1, friends1));
         assertArrayEquals(ans2, ro.recoverOrder(order2, friends2));
     }
+
+    @Test
+    public void testNumIdenticalPairs() {
+        NumIdenticalPairs nip = new NumIdenticalPairs();
+
+        int[] nums1 = {1,2,3,1,1,3};
+        int[] nums2 = {1,1,1,1};
+        int[] nums3 = {1,2,3};
+
+        assertEquals(4, nip.numIdenticalPairs(nums1));
+        assertEquals(6, nip.numIdenticalPairs(nums2));
+        assertEquals(0, nip.numIdenticalPairs(nums3));
+    }
 }
