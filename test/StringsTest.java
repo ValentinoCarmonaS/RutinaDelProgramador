@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThrows;
 
 import java.util.Arrays;
 
@@ -167,5 +168,16 @@ public class StringsTest {
         assertEquals(1, fvao.finalValueAfterOperations(array1));
         assertEquals(3, fvao.finalValueAfterOperations(array2));
         assertEquals(0, fvao.finalValueAfterOperations(array3));
+    }
+
+    @Test
+    public void testMinOperations() {
+        MinOperations mo = new MinOperations();
+
+        int[] ans1 = {1,1,3};
+        int[] ans2 = {11,8,5,4,3,4};
+
+        assertArrayEquals(ans1, mo.minOperations("110"));
+        assertArrayEquals(ans2, mo.minOperations("001011"));
     }
 }
