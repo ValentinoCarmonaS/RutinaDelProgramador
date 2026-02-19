@@ -280,4 +280,18 @@ public class ArrayTest {
         assertEquals(2, fn.findNumbers(nums1));
         assertEquals(1, fn.findNumbers(nums2));
     }
+
+    @Test
+    public void testProductExceptSelf() {
+        ProductExceptSelf pes = new ProductExceptSelf();
+
+        int[] nums1 = {1,2,3,4};
+        int[] nums2 = {-1,1,0,-3,3};
+
+        int[] ans1 = {24,12,8,6};
+        int[] ans2 = {0,0,9,0,0};
+
+        assertArrayEquals(ans1, pes.productExceptSelf(nums1));
+        assertArrayEquals(ans2, pes.productExceptSelf(nums2));
+    }
 }
