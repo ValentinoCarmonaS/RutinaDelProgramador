@@ -189,4 +189,13 @@ public class StringsTest {
         assertEquals(4, md.maxDistinct("abcd"));
         assertEquals(1, md.maxDistinct("aaaa"));
     }
+
+    @Test
+    public void testMinPartitions() {
+        MinPartitions mp = new MinPartitions();
+
+        assertEquals(3, mp.minPartitions("32"));
+        assertEquals(8, mp.minPartitions("82734"));
+        assertEquals(9, mp.minPartitions("27346209830709182346"));
+    }
 }
