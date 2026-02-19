@@ -225,4 +225,21 @@ public class ArrayTest {
         assertEquals(-4, as.alternatingSum(array1));
         assertEquals(100, as.alternatingSum(array2));
     }
+
+    @Test
+    public void testRecoverOrder() {
+        RecoverOrder ro = new RecoverOrder();
+
+        int[] order1 = {3,1,2,5,4};
+        int[] order2 = {1,4,5,3,2};
+
+        int[] friends1 = {1,3,4};
+        int[] friends2 = {2,5};
+
+        int[] ans1 = {3,1,4};
+        int[] ans2 = {5,2};
+
+        assertArrayEquals(ans1, ro.recoverOrder(order1, friends1));
+        assertArrayEquals(ans2, ro.recoverOrder(order2, friends2));
+    }
 }
