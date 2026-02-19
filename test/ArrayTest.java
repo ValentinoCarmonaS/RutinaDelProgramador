@@ -255,4 +255,18 @@ public class ArrayTest {
         assertEquals(6, nip.numIdenticalPairs(nums2));
         assertEquals(0, nip.numIdenticalPairs(nums3));
     }
+
+    @Test
+    public void testPivotArray() {
+        PivotArray pa = new PivotArray();
+
+        int[] nums1 = {9,12,5,10,14,3,10};
+        int[] nums2 = {-3,4,3,2};
+
+        int[] ans1 = {9,5,3,10,10,12,14};
+        int[] ans2 = {-3,2,4,3};
+
+        assertArrayEquals(ans1, pa.pivotArray(nums1, 10));
+        assertArrayEquals(ans2, pa.pivotArray(nums2, 2));
+    }
 }
