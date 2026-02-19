@@ -180,4 +180,13 @@ public class StringsTest {
         assertArrayEquals(ans1, mo.minOperations("110"));
         assertArrayEquals(ans2, mo.minOperations("001011"));
     }
+
+    @Test
+    public void testMaxDistinct() {
+        MaxDistinct md = new MaxDistinct();
+
+        assertEquals(2, md.maxDistinct("abab"));
+        assertEquals(4, md.maxDistinct("abcd"));
+        assertEquals(1, md.maxDistinct("aaaa"));
+    }
 }
