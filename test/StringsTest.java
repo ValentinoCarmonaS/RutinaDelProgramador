@@ -209,4 +209,23 @@ public class StringsTest {
         assertEquals("", lp.longestPalindrome(""));
         assertEquals("", lp.longestPalindrome(null));
     }
+
+    @Test
+    public void testRepeatedSubstringPattern() {
+        RepeatedSubstringPattern rsp = new RepeatedSubstringPattern();
+
+        assertEquals(false, rsp.repeatedSubstringPattern("hello hello hello"));
+        assertEquals(true, rsp.repeatedSubstringPattern("hello hello hello "));
+        assertEquals(true, rsp.repeatedSubstringPattern("           "));
+        assertEquals(false, rsp.repeatedSubstringPattern(""));
+        assertEquals(false, rsp.repeatedSubstringPattern("a"));
+        assertEquals(true, rsp.repeatedSubstringPattern("abab"));
+        assertEquals(false, rsp.repeatedSubstringPattern("aba"));
+        assertEquals(false, rsp.repeatedSubstringPattern("abbbbbbbba"));
+        assertEquals(true, rsp.repeatedSubstringPattern("abbbbbbbbaabbbbbbbba"));
+        assertEquals(true, rsp.repeatedSubstringPattern("abcabcabcabc"));
+        assertEquals(true, rsp.repeatedSubstringPattern("abcabcabc"));
+        assertEquals(false, rsp.repeatedSubstringPattern("abcabcabcd"));
+        assertEquals(false, rsp.repeatedSubstringPattern("dabcabcabc"));
+    }
 }
