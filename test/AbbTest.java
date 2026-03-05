@@ -9,6 +9,7 @@ import java.util.List;
 import org.junit.Test;
 
 import abb.facil.*;
+import abb.medio.LevelOrder;
 import abb.medio.ZigzagLevelOrder;
 import helpers.TreeNode;
 import helpers.testHelpers.helpers.AbbHelper;
@@ -102,6 +103,41 @@ public class AbbTest {
                 Arrays.asList(1, 3, -1),
                 Arrays.asList(8, 6, 1, 5));
         assertEquals(expected5, zzlo.zigzagLevelOrder(root5));
+    }
+
+    @Test
+    public void test01LevelOrder() {
+        LevelOrder lo = new LevelOrder();
+
+        TreeNode root = new TreeNode(3);
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(20);
+        root.right.left = new TreeNode(15);
+        root.right.right = new TreeNode(7);
+
+        List<List<Integer>> ans = List.of(List.of(3), List.of(9, 20), List.of(15, 7));
+
+        assertEquals(ans, lo.levelOrder(root));
+    }
+
+    @Test
+    public void test02LevelOrder() {
+        LevelOrder lo = new LevelOrder();
+
+        TreeNode root = new TreeNode(1);
+
+        List<List<Integer>> ans = List.of(List.of(1));
+
+        assertEquals(ans, lo.levelOrder(root));
+    }
+
+    @Test
+    public void test03LevelOrder() {
+        LevelOrder lo = new LevelOrder();
+
+        List<List<Integer>> ans = List.of();
+
+        assertEquals(ans, lo.levelOrder(null));
     }
 
 }
