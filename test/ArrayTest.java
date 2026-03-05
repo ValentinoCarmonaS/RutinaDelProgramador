@@ -294,4 +294,21 @@ public class ArrayTest {
         assertArrayEquals(ans1, pes.productExceptSelf(nums1));
         assertArrayEquals(ans2, pes.productExceptSelf(nums2));
     }
+
+    @Test
+    public void testMoveZeroes() {
+        MoveZeroes mz = new MoveZeroes();
+
+        int[] array1 = {0,1,0,3,12};
+        int[] array2 = {0};
+
+        mz.moveZeroes(array1);
+        mz.moveZeroes(array2);
+
+        int[] ans1 = {1,3,12,0,0};
+        int[] ans2 = {0};
+
+        assertArrayEquals(ans1, array1);
+        assertArrayEquals(ans2, array2);
+    }
 }
