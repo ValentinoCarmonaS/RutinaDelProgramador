@@ -205,11 +205,11 @@ public class ArrayTest {
     public void testGetConcatenation() {
         GetConcatenation gc = new GetConcatenation();
 
-        int[] array1 = {1,2,1};
-        int[] array2 = {1,3,2,1};
+        int[] array1 = { 1, 2, 1 };
+        int[] array2 = { 1, 3, 2, 1 };
 
-        int[] ans1 = {1,2,1,1,2,1};
-        int[] ans2 = {1,3,2,1,1,3,2,1};
+        int[] ans1 = { 1, 2, 1, 1, 2, 1 };
+        int[] ans2 = { 1, 3, 2, 1, 1, 3, 2, 1 };
 
         assertArrayEquals(ans1, gc.getConcatenation(array1));
         assertArrayEquals(ans2, gc.getConcatenation(array2));
@@ -219,8 +219,8 @@ public class ArrayTest {
     public void testAlternatingSum() {
         AlternatingSum as = new AlternatingSum();
 
-        int[] array1 = {1,3,5,7};
-        int[] array2 = {100};
+        int[] array1 = { 1, 3, 5, 7 };
+        int[] array2 = { 100 };
 
         assertEquals(-4, as.alternatingSum(array1));
         assertEquals(100, as.alternatingSum(array2));
@@ -230,14 +230,14 @@ public class ArrayTest {
     public void testRecoverOrder() {
         RecoverOrder ro = new RecoverOrder();
 
-        int[] order1 = {3,1,2,5,4};
-        int[] order2 = {1,4,5,3,2};
+        int[] order1 = { 3, 1, 2, 5, 4 };
+        int[] order2 = { 1, 4, 5, 3, 2 };
 
-        int[] friends1 = {1,3,4};
-        int[] friends2 = {2,5};
+        int[] friends1 = { 1, 3, 4 };
+        int[] friends2 = { 2, 5 };
 
-        int[] ans1 = {3,1,4};
-        int[] ans2 = {5,2};
+        int[] ans1 = { 3, 1, 4 };
+        int[] ans2 = { 5, 2 };
 
         assertArrayEquals(ans1, ro.recoverOrder(order1, friends1));
         assertArrayEquals(ans2, ro.recoverOrder(order2, friends2));
@@ -247,9 +247,9 @@ public class ArrayTest {
     public void testNumIdenticalPairs() {
         NumIdenticalPairs nip = new NumIdenticalPairs();
 
-        int[] nums1 = {1,2,3,1,1,3};
-        int[] nums2 = {1,1,1,1};
-        int[] nums3 = {1,2,3};
+        int[] nums1 = { 1, 2, 3, 1, 1, 3 };
+        int[] nums2 = { 1, 1, 1, 1 };
+        int[] nums3 = { 1, 2, 3 };
 
         assertEquals(4, nip.numIdenticalPairs(nums1));
         assertEquals(6, nip.numIdenticalPairs(nums2));
@@ -260,11 +260,11 @@ public class ArrayTest {
     public void testPivotArray() {
         PivotArray pa = new PivotArray();
 
-        int[] nums1 = {9,12,5,10,14,3,10};
-        int[] nums2 = {-3,4,3,2};
+        int[] nums1 = { 9, 12, 5, 10, 14, 3, 10 };
+        int[] nums2 = { -3, 4, 3, 2 };
 
-        int[] ans1 = {9,5,3,10,10,12,14};
-        int[] ans2 = {-3,2,4,3};
+        int[] ans1 = { 9, 5, 3, 10, 10, 12, 14 };
+        int[] ans2 = { -3, 2, 4, 3 };
 
         assertArrayEquals(ans1, pa.pivotArray(nums1, 10));
         assertArrayEquals(ans2, pa.pivotArray(nums2, 2));
@@ -274,8 +274,8 @@ public class ArrayTest {
     public void testFindNumbers() {
         FindNumbers fn = new FindNumbers();
 
-        int[] nums1 = {12,345,2,6,7896};
-        int[] nums2 = {555,901,482,1771};
+        int[] nums1 = { 12, 345, 2, 6, 7896 };
+        int[] nums2 = { 555, 901, 482, 1771 };
 
         assertEquals(2, fn.findNumbers(nums1));
         assertEquals(1, fn.findNumbers(nums2));
@@ -285,11 +285,11 @@ public class ArrayTest {
     public void testProductExceptSelf() {
         ProductExceptSelf pes = new ProductExceptSelf();
 
-        int[] nums1 = {1,2,3,4};
-        int[] nums2 = {-1,1,0,-3,3};
+        int[] nums1 = { 1, 2, 3, 4 };
+        int[] nums2 = { -1, 1, 0, -3, 3 };
 
-        int[] ans1 = {24,12,8,6};
-        int[] ans2 = {0,0,9,0,0};
+        int[] ans1 = { 24, 12, 8, 6 };
+        int[] ans2 = { 0, 0, 9, 0, 0 };
 
         assertArrayEquals(ans1, pes.productExceptSelf(nums1));
         assertArrayEquals(ans2, pes.productExceptSelf(nums2));
@@ -299,16 +299,29 @@ public class ArrayTest {
     public void testMoveZeroes() {
         MoveZeroes mz = new MoveZeroes();
 
-        int[] array1 = {0,1,0,3,12};
-        int[] array2 = {0};
+        int[] array1 = { 0, 1, 0, 3, 12 };
+        int[] array2 = { 0 };
 
         mz.moveZeroes(array1);
         mz.moveZeroes(array2);
 
-        int[] ans1 = {1,3,12,0,0};
-        int[] ans2 = {0};
+        int[] ans1 = { 1, 3, 12, 0, 0 };
+        int[] ans2 = { 0 };
 
         assertArrayEquals(ans1, array1);
         assertArrayEquals(ans2, array2);
+    }
+
+    @Test
+    public void testContainsDuplicate() {
+        ContainsDuplicate cd = new ContainsDuplicate();
+
+        int[] nums1 = { 1, 2, 3, 1 };
+        int[] nums2 = { 1, 2, 3, 4 };
+        int[] nums3 = { 1, 1, 1, 3, 3, 4, 3, 2, 4, 2 };
+
+        assertEquals(true, cd.containsDuplicate(nums1));
+        assertEquals(false, cd.containsDuplicate(nums2));
+        assertEquals(true, cd.containsDuplicate(nums3));
     }
 }
