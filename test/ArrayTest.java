@@ -324,4 +324,15 @@ public class ArrayTest {
         assertEquals(false, cd.containsDuplicate(nums2));
         assertEquals(true, cd.containsDuplicate(nums3));
     }
+
+    @Test
+    public void testSubarraySum() {
+        SubarraySum ss = new SubarraySum();
+
+        int[] array1 = { 1, 1, 1 };
+        int[] array2 = { 1, 2, 3 };
+
+        assertEquals(2, ss.subarraySum(array1, 2));
+        assertEquals(2, ss.subarraySum(array2, 3));
+    }
 }
