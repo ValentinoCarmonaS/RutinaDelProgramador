@@ -198,4 +198,15 @@ public class StringsTest {
         assertEquals(8, mp.minPartitions("82734"));
         assertEquals(9, mp.minPartitions("27346209830709182346"));
     }
+
+    @Test
+    public void TestLongestPalindrome() {
+        LongestPalindrome lp = new LongestPalindrome();
+
+        assertEquals("bab", lp.longestPalindrome("babad"));
+        assertEquals("bb", lp.longestPalindrome("cbbd"));
+        assertEquals("cbbc", lp.longestPalindrome("cbbc"));
+        assertEquals("", lp.longestPalindrome(""));
+        assertEquals("", lp.longestPalindrome(null));
+    }
 }
