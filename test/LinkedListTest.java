@@ -222,4 +222,65 @@ public class LinkedListTest {
 
         assertEquals(null, newHead);
     }
+
+    @Test
+    public void test01HasCycle() {
+        HasCycle hc = new HasCycle();
+
+        ListNode node4 = new ListNode(-4);
+        ListNode node3 = new ListNode(0, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(3, node2);
+
+        node4.next = node2;
+
+        assertEquals(true, hc.hasCycle(node1));
+    }
+
+    @Test
+    public void test02HasCycle() {
+        HasCycle hc = new HasCycle();
+
+        ListNode node2 = new ListNode(2);
+        ListNode node1 = new ListNode(1, node2);
+
+        node2.next = node1;
+
+        assertEquals(true, hc.hasCycle(node1));
+    }
+
+    @Test
+    public void test03HasCycle() {
+        HasCycle hc = new HasCycle();
+
+        ListNode node1 = new ListNode(1);
+
+        assertEquals(false, hc.hasCycle(node1));
+    }
+
+    @Test
+    public void test04HasCycle() {
+        HasCycle hc = new HasCycle();
+
+        ListNode node4 = new ListNode(-4);
+        ListNode node3 = new ListNode(0, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(3, node2);
+
+        assertEquals(false, hc.hasCycle(node1));
+    }
+
+    @Test
+    public void test05HasCycle() {
+        HasCycle hc = new HasCycle();
+
+        ListNode node4 = new ListNode(-4);
+        ListNode node3 = new ListNode(0, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(3, node2);
+
+        node4.next = node4;
+
+        assertEquals(true, hc.hasCycle(node1));
+    }
 }
