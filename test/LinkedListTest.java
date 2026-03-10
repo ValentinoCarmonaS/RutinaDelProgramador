@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import helpers.ListNode;
 import linked_list.facil.*;
+import linked_list.medio.RemoveNthFromEnd;
 
 public class LinkedListTest {
     
@@ -153,5 +154,72 @@ public class LinkedListTest {
 
         ListNode head = rl.reverseListRecursively(null);
         assertEquals(null, head);
+    }
+
+    @Test
+    public void test01RemoveNthFromEnd() {
+        RemoveNthFromEnd rnfe = new RemoveNthFromEnd();
+        ListNode node5 = new ListNode(5);
+        ListNode node4 = new ListNode(4, node5);
+        ListNode node3 = new ListNode(3, node4);
+        ListNode node2 = new ListNode(2, node3);
+        ListNode node1 = new ListNode(1, node2);
+
+        ListNode newHead = rnfe.removeNthFromEnd(node1, 2);
+
+        assertEquals(node1, newHead);
+        ListNode tempNode = newHead.next;
+
+        assertEquals(node2, tempNode);
+        tempNode = tempNode.next;
+
+        assertEquals(node3, tempNode);
+        tempNode = tempNode.next;
+
+        assertEquals(node5, tempNode);
+        tempNode = tempNode.next;
+    }
+
+    @Test
+    public void test02RemoveNthFromEnd() {
+        RemoveNthFromEnd rnfe = new RemoveNthFromEnd();
+        ListNode node1 = new ListNode(1);
+
+        ListNode newHead = rnfe.removeNthFromEnd(node1, 1);
+
+        assertEquals(null, newHead);
+    }
+
+    @Test
+    public void test03RemoveNthFromEnd() {
+        RemoveNthFromEnd rnfe = new RemoveNthFromEnd();
+        ListNode node2 = new ListNode(2);
+        ListNode node1 = new ListNode(1, node2);
+
+        ListNode newHead = rnfe.removeNthFromEnd(node1, 1);
+
+        assertEquals(node1, newHead);
+        ListNode tempNode = newHead.next;
+
+        assertEquals(null, tempNode);
+    }
+
+    @Test
+    public void test04RemoveNthFromEnd() {
+        RemoveNthFromEnd rnfe = new RemoveNthFromEnd();
+        ListNode node = new ListNode();
+
+        ListNode newHead = rnfe.removeNthFromEnd(node, 2);
+
+        assertEquals(null, newHead);
+    }
+
+    @Test
+    public void test05RemoveNthFromEnd() {
+        RemoveNthFromEnd rnfe = new RemoveNthFromEnd();
+
+        ListNode newHead = rnfe.removeNthFromEnd(null, 2);
+
+        assertEquals(null, newHead);
     }
 }
