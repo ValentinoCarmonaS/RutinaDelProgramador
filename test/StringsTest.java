@@ -228,4 +228,14 @@ public class StringsTest {
         assertEquals(false, rsp.repeatedSubstringPattern("abcabcabcd"));
         assertEquals(false, rsp.repeatedSubstringPattern("dabcabcabc"));
     }
+    
+    @Test
+    public void testConvert() {
+        Convert c = new Convert();
+        assertEquals("PAHNAPLSIIGYIR", c.convert("PAYPALISHIRING", 3));
+        assertEquals("PINALSIGYAHRPI", c.convert("PAYPALISHIRING", 4));
+        assertEquals("PAYPALISHIRING", c.convert("PAYPALISHIRING", 1));
+        assertEquals("A", c.convert("A", 1));
+        assertEquals("AB", c.convert("AB", 10));
+    }
 }
